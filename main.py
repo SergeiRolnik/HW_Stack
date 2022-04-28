@@ -25,6 +25,7 @@ open_brackets = ["[", "{", "("]
 close_brackets = ["]", "}", ")"]
 
 def check_balance(str):
+
     s = Stack()
     for bracket in str:
         if bracket in open_brackets:
@@ -34,10 +35,13 @@ def check_balance(str):
                 s.pop()
             else:
                 return 'Unbalanced'
-    print(s.stack)
+
     if s.isEmpty():
         return 'Balanced'
+    else:
+        return 'Unbalanced'
 
 strings = ['(((([{}]))))', '[([])((([[[]]])))]{()}', '{{[()]}}', '}{}', '{{[(])]}}', '[[{())}]', '(({{']
-for str in strings[-1]:
+
+for str in strings:
     print(str, check_balance(str))
